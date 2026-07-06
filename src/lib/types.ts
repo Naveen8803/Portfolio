@@ -17,6 +17,7 @@ export interface Experience {
   period: string;
   description: string[];
   type: 'internship' | 'fulltime' | 'freelance';
+  metrics?: { value: string; label: string }[];
 }
 
 export interface Project {
@@ -37,14 +38,6 @@ export interface Project {
   architecture?: string;
   challenges?: string;
   futureScope?: string;
-}
-
-export interface Education {
-  degree: string;
-  institution: string;
-  period: string;
-  cgpa: number;
-  description?: string;
 }
 
 export interface Certification {

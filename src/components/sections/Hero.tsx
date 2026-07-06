@@ -94,6 +94,17 @@ export default function Hero() {
             Get In Touch
           </a>
         </motion.div>
+
+        {/* Availability line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.3 }}
+          className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-white/30"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00FFB2]" />
+          Open to internships &amp; collaborations
+        </motion.p>
       </div>
 
       {/* Scroll indicator */}

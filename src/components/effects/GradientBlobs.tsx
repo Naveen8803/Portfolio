@@ -10,7 +10,8 @@ export default function GradientBlobs() {
           height: 600,
           top: "-10%",
           left: "-5%",
-          background: "radial-gradient(circle, rgba(0, 245, 255, 0.4), transparent 70%)",
+          opacity: 0.1,
+          background: "radial-gradient(circle, rgba(0, 245, 255, 0.35), transparent 70%)",
           animationDelay: "0s",
         }}
       />
@@ -19,21 +20,11 @@ export default function GradientBlobs() {
         style={{
           width: 500,
           height: 500,
-          top: "30%",
+          top: "35%",
           right: "-10%",
-          background: "radial-gradient(circle, rgba(123, 97, 255, 0.35), transparent 70%)",
-          animationDelay: "2s",
-        }}
-      />
-      <div
-        className="aurora-blob"
-        style={{
-          width: 400,
-          height: 400,
-          bottom: "-5%",
-          left: "30%",
-          background: "radial-gradient(circle, rgba(0, 255, 178, 0.3), transparent 70%)",
-          animationDelay: "4s",
+          opacity: 0.1,
+          background: "radial-gradient(circle, rgba(123, 97, 255, 0.3), transparent 70%)",
+          animationDelay: "3s",
         }}
       />
     </div>

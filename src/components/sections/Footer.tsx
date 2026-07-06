@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { socialLinks } from "@/lib/data";
-import { Mail, ArrowUp, Heart } from "lucide-react";
+import { Mail, ArrowUp } from "lucide-react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const GithubIcon = ({ size = 18, className = "" }: { size?: number; className?: string }) => (
@@ -50,40 +50,34 @@ export default function Footer() {
             {socialLinks.map((link, i) => {
               const Icon = iconMap[link.icon] || Mail;
               return (
-                <motion.a
+                <a
                   key={i}
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white/50 hover:text-[#00F5FF] hover:border-[#00F5FF]/30 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] transition-all duration-300"
+                  className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white/50 hover:text-[#00F5FF] hover:border-[#00F5FF]/30 transition-colors duration-300"
                   aria-label={link.label}
                 >
                   <Icon size={18} />
-                </motion.a>
+                </a>
               );
             })}
           </div>
 
           {/* Back to top */}
-          <motion.button
+          <button
             onClick={scrollToTop}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white/50 hover:text-[#00F5FF] hover:border-[#00F5FF]/30 transition-all duration-300 cursor-pointer"
+            className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white/50 hover:text-[#00F5FF] hover:border-[#00F5FF]/30 transition-colors duration-300 cursor-pointer"
             aria-label="Back to top"
           >
             <ArrowUp size={18} />
-          </motion.button>
+          </button>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-white/5 text-center">
-          <p className="text-white/20 text-xs flex items-center justify-center gap-1">
-            © {new Date().getFullYear()} Naveen Varma. Built with
-            <Heart size={12} className="text-[#00F5FF]" />
-            and Next.js
+          <p className="text-white/20 text-xs">
+            © {new Date().getFullYear()} Naveen Varma · Built with Next.js
           </p>
         </div>
       </div>

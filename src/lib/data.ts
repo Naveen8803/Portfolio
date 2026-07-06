@@ -2,7 +2,6 @@ import {
   SkillCategory,
   Experience,
   Project,
-  Education,
   Certification,
   Achievement,
   NavItem,
@@ -14,6 +13,7 @@ export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 // ─── Social Links ────────────────────────────────────────────
@@ -51,17 +51,14 @@ export const heroData = {
 
 // ─── About ───────────────────────────────────────────────────
 export const aboutData = {
-  narrative: `I'm fascinated by the intersection of data and intelligence. From translating sign language in real-time to optimizing factory operations with analytics — I love turning complex problems into elegant, working systems.`,
+  narrative: [
+    `I'm fascinated by the intersection of data and intelligence. From translating sign language in real time to optimizing factory operations with analytics — I love turning complex problems into elegant, working systems.`,
+    `I spend my time building computer-vision and NLP systems, digging through messy datasets, and shipping projects end to end — from model training to deployed web apps.`,
+  ],
   techStack: [
     "Python", "TensorFlow", "OpenCV", "MediaPipe", "Flask",
     "Pandas", "NumPy", "Scikit-learn", "Django", "SQL",
     "Matplotlib", "Seaborn", "Streamlit", "Docker", "Git",
-  ],
-  stats: [
-    { value: 6, label: "Projects Shipped", suffix: "+" },
-    { value: 2, label: "Internships", suffix: "" },
-    { value: 9.31, label: "CGPA", suffix: "", decimals: 2 },
-    { value: 4, label: "Certifications", suffix: "" },
   ],
 };
 
@@ -134,7 +131,8 @@ export const experiences: Experience[] = [
     period: "May — Jul 2025",
     type: "internship",
     description: [
-      "Built and shipped ML classification models with optimized hyperparameters and interactive Streamlit dashboards.",
+      "Built and tuned ML classification models with optimized hyperparameters.",
+      "Shipped interactive Streamlit dashboards to put model results in front of stakeholders.",
     ],
   },
   {
@@ -144,7 +142,12 @@ export const experiences: Experience[] = [
     period: "May — Jun 2023",
     type: "internship",
     description: [
-      "Identified production bottlenecks via data analysis — improved ops by 15% and saved ₹1.5L through scrap optimization.",
+      "Analyzed factory production data to surface bottlenecks and scrap-utilization opportunities, then worked cross-functionally to act on them.",
+    ],
+    metrics: [
+      { value: "15%", label: "efficiency gain" },
+      { value: "₹1.5L", label: "saved via scrap optimization" },
+      { value: "30%", label: "fewer delays" },
     ],
   },
 ];
@@ -166,6 +169,7 @@ export const projects: Project[] = [
     highlights: [
       "Real-time gesture classification with normalized MediaPipe landmarks.",
       "Bidirectional: speech-to-sign and sign-to-text.",
+      "Multilingual output across 8 languages.",
     ],
     category: "AI / Computer Vision",
     featured: true,
@@ -237,25 +241,7 @@ export const projects: Project[] = [
   },
 ];
 
-// ─── Education ───────────────────────────────────────────────
-export const education: Education[] = [
-  {
-    degree: "Master of Computer Applications (MCA)",
-    institution: "KL University",
-    period: "2024 — 2026",
-    cgpa: 9.31,
-    description:
-      "Specializing in Data Science, Machine Learning, and AI. Active participant in technical events and hackathons.",
-  },
-  {
-    degree: "BSc Computer Science",
-    institution: "Andhra Loyola College",
-    period: "2021 — 2024",
-    cgpa: 8.65,
-    description:
-      "Strong foundation in programming, data structures, algorithms, and mathematics.",
-  },
-];
+
 
 // ─── Certifications ──────────────────────────────────────────
 export const certifications: Certification[] = [
@@ -290,34 +276,16 @@ export const achievements: Achievement[] = [
     icon: "trending-up",
   },
   {
-    metric: "25%",
-    label: "Waste Reduction",
-    description: "Reduced manufacturing waste through scrap utilization strategies",
-    icon: "recycle",
-  },
-  {
     metric: "8",
     label: "Languages Supported",
     description: "Multilingual output in Samvak sign language translator",
     icon: "languages",
   },
   {
-    metric: "30%",
-    label: "Delay Reduction",
-    description: "Reduced operational delays through cross-functional collaboration",
-    icon: "zap",
-  },
-  {
     metric: "21K+",
     label: "Records Analyzed",
     description: "Property records analyzed in Brazilian Real Estate project",
     icon: "database",
-  },
-  {
-    metric: "9.31",
-    label: "CGPA",
-    description: "Current CGPA at KL University in MCA program",
-    icon: "graduation-cap",
   },
 ];
 

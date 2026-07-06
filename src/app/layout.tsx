@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Naveen Varma | Data Scientist & ML Engineer",
     description:
-      "Data-driven MCA student building AI-powered solutions. Experience in Python, ML, Computer Vision, and full-stack development.",
+      "Data Scientist building AI-powered solutions. Specializing in Python, ML, Computer Vision, and full-stack development.",
     type: "website",
     locale: "en_US",
     siteName: "Naveen Varma Portfolio",
@@ -48,12 +48,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Naveen Varma | Data Scientist & ML Engineer",
     description:
-      "Data-driven MCA student building AI-powered solutions. Experience in Python, ML, Computer Vision, and full-stack development.",
+      "Data Scientist building AI-powered solutions. Specializing in Python, ML, Computer Vision, and full-stack development.",
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050816",
 };
 
 export default function RootLayout({

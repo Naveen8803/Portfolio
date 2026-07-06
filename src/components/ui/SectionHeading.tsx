@@ -19,7 +19,7 @@ export default function SectionHeading({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`mb-16 ${align === "center" ? "text-center" : "text-left"}`}
+      className={`mb-20 ${align === "center" ? "text-center" : "text-left"}`}
     >
       {subtitle && (
         <motion.p
@@ -27,14 +27,14 @@ export default function SectionHeading({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-[#00F5FF] text-sm font-mono tracking-[0.2em] uppercase mb-3"
+          className="text-[#00F5FF]/80 text-[11px] font-mono tracking-[0.25em] uppercase mb-4"
           style={{ fontFamily: "var(--font-mono)" }}
         >
           {subtitle}
         </motion.p>
       )}
       <h2
-        className="text-4xl md:text-5xl font-bold gradient-text-static inline-block"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white inline-block tracking-tight"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         {title}
@@ -44,8 +44,8 @@ export default function SectionHeading({
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-        className={`h-1 mt-4 rounded-full bg-gradient-to-r from-[#00F5FF] via-[#7B61FF] to-[#00FFB2] ${
-          align === "center" ? "mx-auto w-24" : "w-24"
+        className={`h-[2px] mt-5 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#7B61FF] ${
+          align === "center" ? "mx-auto w-16" : "w-16"
         }`}
       />
     </motion.div>

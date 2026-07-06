@@ -8,20 +8,21 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 export default function Contact() {
   return (
     <section id="contact" className="section-padding relative z-10">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+      <div className="max-w-4xl mx-auto text-center">
         {/* Overline */}
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-block text-[11px] text-white/30 font-mono tracking-widest mb-6"
+          transition={{ duration: 0.5 }}
+          className="inline-block font-mono text-[11px] tracking-[0.2em] uppercase text-white/30 mb-6"
         >
           // what&apos;s next?
         </motion.span>
 
         {/* Big CTA headline */}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
@@ -38,7 +39,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-white/40 text-lg max-w-lg mx-auto mb-12"
+          className="text-white/45 text-lg max-w-lg mx-auto mb-12"
         >
           I&apos;m currently open to internships, collaborations, and interesting projects.
           Drop me a line — I&apos;d love to hear from you.
@@ -60,6 +61,14 @@ export default function Contact() {
             Say Hello
             <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
+          <div className="mt-6">
+            <a
+              href={`mailto:${contactData.email}`}
+              className="font-mono text-sm text-white/35 hover:text-[#00F5FF] transition-colors"
+            >
+              {contactData.email}
+            </a>
+          </div>
         </motion.div>
 
         {/* Social links */}
@@ -88,14 +97,6 @@ export default function Contact() {
           >
             <FaLinkedinIn size={16} />
             LinkedIn
-          </a>
-          <span className="w-[1px] h-4 bg-white/10" />
-          <a
-            href={`mailto:${contactData.email}`}
-            className="flex items-center gap-2 text-sm text-white/30 hover:text-[#00F5FF] transition-colors"
-          >
-            <Mail size={16} />
-            Email
           </a>
         </motion.div>
       </div>

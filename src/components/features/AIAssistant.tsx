@@ -69,10 +69,6 @@ export default function AIAssistant() {
       return `Naveen has completed multiple internships:\n${expList}`;
     }
 
-    if (q.includes("education") || q.includes("college") || q.includes("university") || q.includes("cgpa")) {
-      return `Naveen is pursuing a Master of Computer Applications (MCA) at KL University (2024-2026) with a CGPA of 9.31. Previously, he completed his BSc in Computer Science at Andhra Loyola College (2021-2024) with a CGPA of 8.65.`;
-    }
-
     if (q.includes("contact") || q.includes("email") || q.includes("phone")) {
       return `You can reach Naveen via:\nEmail: naveenvarma8803@gmail.com\nPhone: +91 7901695716\nLinkedIn: https://www.linkedin.com/in/naveen-varma88/`;
     }
@@ -81,7 +77,7 @@ export default function AIAssistant() {
       return "Hi there! How can I help you learn more about Naveen today?";
     }
 
-    return "I'm not sure about that. Try asking about his 'skills', 'experience', 'projects', 'education', or how to 'contact' him!";
+    return "I'm not sure about that. Try asking about his 'skills', 'experience', 'projects', or how to 'contact' him!";
   };
 
   return (
