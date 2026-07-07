@@ -86,11 +86,8 @@
 }
 
 /* ─── Base Styles ────────────────────────────────────────── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Note: Tailwind v4's preflight handles box-sizing, margin, and padding resets.
+   Custom unlayered resets would override all Tailwind utilities. */
 
 html {
   scroll-behavior: smooth;
