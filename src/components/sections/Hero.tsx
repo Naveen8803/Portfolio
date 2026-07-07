@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight, Send } from "lucide-react";
 import TypewriterText from "../ui/TypewriterText";
 import { heroData } from "@/lib/data";
 
@@ -22,14 +22,14 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050816] z-1" />
 
-      {/* Content Container (Centered layout) */}
+      {/* Content Container */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-8 w-full flex flex-col items-center">
         {/* Tagline badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00F5FF]/5 border border-[#00F5FF]/15 text-[#00F5FF] text-xs font-mono tracking-wider"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-white/50 text-xs font-mono tracking-wider"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#00FFB2] animate-pulse" />
           {heroData.tagline}
@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] tracking-tight max-w-3xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight max-w-3xl"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           {heroData.statement.split("\n").map((line, i) => (
@@ -73,24 +73,34 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* CTAs */}
+        {/* CTAs — refined, not chunky */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="flex flex-wrap items-center justify-center gap-4 pt-4"
+          className="flex flex-wrap items-center justify-center gap-4 pt-2"
         >
+          {/* Primary — subtle gradient border, not filled */}
           <a
             href="#projects"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold bg-gradient-to-r from-[#00F5FF] to-[#7B61FF] text-[#050816] hover:shadow-[0_0_40px_rgba(0,245,255,0.3)] transition-all duration-500"
+            className="group relative inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-medium overflow-hidden transition-all duration-500"
           >
-            See My Work
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            {/* Gradient border */}
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#7B61FF] p-[1px]">
+              <span className="w-full h-full rounded-full bg-[#050816] block group-hover:bg-[#0a0f2c] transition-colors duration-500" />
+            </span>
+            <span className="relative z-10 text-white/90 group-hover:text-white flex items-center gap-2.5 transition-colors">
+              See My Work
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+            </span>
           </a>
+
+          {/* Secondary — ghost */}
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold border border-white/10 text-white/70 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-500"
+            className="group inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-medium border border-white/[0.08] text-white/50 hover:text-white/80 hover:border-white/[0.15] hover:bg-white/[0.03] transition-all duration-500"
           >
+            <Send size={13} className="group-hover:rotate-12 transition-transform duration-300" />
             Get In Touch
           </a>
         </motion.div>
@@ -100,7 +110,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.3 }}
-          className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-white/30"
+          className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] uppercase text-white/25"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#00FFB2]" />
           Open to internships &amp; collaborations
@@ -118,7 +128,7 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <ArrowDown size={16} className="text-white/20" />
+          <ArrowDown size={16} className="text-white/15" />
         </motion.div>
       </motion.div>
     </section>
